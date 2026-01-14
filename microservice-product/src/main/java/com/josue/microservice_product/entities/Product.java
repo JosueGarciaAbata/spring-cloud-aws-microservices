@@ -12,7 +12,10 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 100, nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private Double price;
 
     @Column(name = "created_at")

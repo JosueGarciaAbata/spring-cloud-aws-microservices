@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping(path = "/api/{version}/products", version = "1.0.0")
 public class ProductController {
 
     private final ProductService productService;
@@ -18,12 +18,12 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping(version = "1")
+    @GetMapping("/")
     public List<Product> findAll() {
         return productService.findAll();
     }
 
-    @GetMapping(path = "/{id}", version = "1")
+    @GetMapping("/{id}")
     public ResponseEntity<Product> findById(@PathVariable Long id) {
 
         Optional<Product> product = productService.findById(id);
@@ -31,5 +31,4 @@ public class ProductController {
         return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
 
     }
-
 }
