@@ -2,7 +2,7 @@ package com.josue.microservice_item.models;
 
 import java.time.LocalDate;
 
-public class Product {
+public class ProductDto {
 
     private Long id;
     private String name;

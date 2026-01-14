@@ -1,25 +1,25 @@
 package com.josue.microservice_item.entities;
 
-import com.josue.microservice_item.models.Product;
+import com.josue.microservice_item.models.ProductDto;
 
 public class Item {
 
-    private Product product;
+    private ProductDto product;
     private int quantity;
 
     public Item() {
     }
 
-    public Item(Product product, int quantity) {
+    public Item(ProductDto product, int quantity) {
         this.product = product;
         this.quantity = quantity;
     }
 
-    public Product getProduct() {
+    public ProductDto getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(ProductDto product) {
         this.product = product;
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/api/{version}/products", version = "1.0.0")
+@RequestMapping(path = "/api/{version}/products", version = "v1")
 public class ProductController {
 
     private final ProductService productService;
