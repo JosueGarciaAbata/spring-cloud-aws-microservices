@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name ="${microservice.products.name}", url = "${microservice.products.url}")
+@FeignClient(name ="${microservice.products.name}")
 public interface ProductFeignClient {
 
-    @GetMapping("/")
+    @GetMapping("/api/v1/products/")
     List<ProductDto> findAll();
 
-    @GetMapping("/{id}")
+    @GetMapping("/api/v1/products/{id}")
     ProductDto findById(@PathVariable Long id);
 
 }
