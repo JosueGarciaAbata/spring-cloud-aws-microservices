@@ -23,6 +23,11 @@ public class ProductController {
         return productService.findAll();
     }
 
+    @GetMapping(value = "/", version = "v2")
+    public List<Product> findAllV2() {
+        return List.of();
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Product> findById(@PathVariable Long id) {
 

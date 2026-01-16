@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: microservice-product-v1
+              uri: lb://microservice-product
+              predicates:
+                - Path=/api/v1/products/**
+
+            - id: microservice-product-v2
+              uri: lb://microservice-product
+              predicates:
+                - Path=/api/v2/products/**
+
+            - id: microservice-item
+              uri: lb://microservice-item
+              predicates:
+                - Path=/api/v1/items/**
