@@ -8,13 +8,26 @@ spring:
               uri: lb://microservice-product
               predicates:
                 - Path=/api/v1/products/**
+                - Method=GET
+              filters:
+                - SampleCookie=Thisismymessage, system, adxx
 
             - id: microservice-product-v2
               uri: lb://microservice-product
               predicates:
                 - Path=/api/v2/products/**
+              filters:
+                - name: SampleCookie
+                  args:
+                    message: Hello! This is my message.
+                    name: system
+                    value: adxx
 
             - id: microservice-item
               uri: lb://microservice-item
               predicates:
                 - Path=/api/v1/items/**
+              filters:
+                - AddRequestHeader=token-request, reqsw123
+                - AddResponseHeader=token-response, resp2
+                - AddRequestParameter=name, Josue
