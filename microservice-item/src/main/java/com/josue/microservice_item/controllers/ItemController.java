@@ -3,6 +3,7 @@ package com.josue.microservice_item.controllers;
 import com.josue.microservice_item.entities.Item;
 import com.josue.microservice_item.services.ItemService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 @RestController()
 @RequestMapping("/api/v1/items")
@@ -65,4 +67,24 @@ public class ItemController {
         return ResponseEntity.notFound().build();
     }
 
+    // Cuando hay ambos no sabe a cual fallbackMethod ir, entonces
+    // es necesario tener logs para saber que excepcion esta lanzando, si es un timeout o si es uno del circuit breaker.
+    @CircuitBreaker(name = "items", fallbackMethod = "findByIdCbFallback")
+    @TimeLimiter(name = "items")
+    // Lo mejor es que se declare SOLO un fallbackMethod (en el circuit breaker y funciona para ambos)
+    @GetMapping("/by-product/tl/{productId}")
+    public CompletableFuture<ResponseEntity<Item>> findByIdTl(@PathVariable Long productId) {
+        return CompletableFuture.supplyAsync(() -> {
+            Optional<Item> item = itemService.findById(productId);
+            if (item.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
+
+            return ResponseEntity.ok(item.get());
+        });
+    }
+
+    public ResponseEntity<Item> findByIdTl(Throwable throwable) {
+        return ResponseEntity.notFound().build();
+    }
 }

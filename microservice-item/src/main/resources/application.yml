@@ -8,7 +8,7 @@ resilience4j:
           seconds: 10
         max-wait-duration-in-half-open-state:
           seconds: 10
-        permitted-number-of-calls-in-half-open-state: 10
+        permitted-number-of-calls-in-half-open-state: 5
         slow-call-duration-threshold:
           seconds: 2
         slow-call-rate-threshold: 50

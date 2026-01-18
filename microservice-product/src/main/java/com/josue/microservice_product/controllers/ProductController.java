@@ -37,7 +37,7 @@ public class ProductController {
         }
 
         if (id.equals(20L)) {
-            TimeUnit.MILLISECONDS.sleep(1L);
+            TimeUnit.SECONDS.sleep(6L); // Ajustar si es para probar o un slow call o un timeout.
         }
 
         Optional<Product> product = productService.findById(id);
