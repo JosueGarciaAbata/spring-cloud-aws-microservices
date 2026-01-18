@@ -2,6 +2,7 @@ package com.josue.microservice_item.controllers;
 
 import com.josue.microservice_item.entities.Item;
 import com.josue.microservice_item.services.ItemService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,6 +38,20 @@ public class ItemController {
 
     @GetMapping("/by-product/{productId}")
     public ResponseEntity<Item> findById(@PathVariable Long productId) {
+        Optional<Item> item = circuitBreakerFactory.create("items").run(() -> itemService.findById(productId), e -> {
+            logger.info("CircuitBreakerFactory, somenthing went wrong in findById' = " + productId);
+            return Optional.empty();
+        });
+        if (item.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(item.get());
+    }
+
+    @CircuitBreaker(name = "items") // Solo toma en cuenta configuraiones del .yml
+    @GetMapping("/by-product/cb/{productId}")
+    public ResponseEntity<Item> findByIdCb(@PathVariable Long productId) {
         Optional<Item> item = circuitBreakerFactory.create("items").run(() -> itemService.findById(productId), e -> {
             logger.info("CircuitBreakerFactory, somenthing went wrong in findById' = " + productId);
             return Optional.empty();

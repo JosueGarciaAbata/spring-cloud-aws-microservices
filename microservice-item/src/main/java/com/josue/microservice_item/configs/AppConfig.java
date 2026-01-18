@@ -13,6 +13,7 @@ import java.time.Duration;
 @Configuration
 public class AppConfig {
 
+    // Solo es tomada en cuenta en la forma programatica del Circuit Breaker.
     @Bean
     Customizer<Resilience4JCircuitBreakerFactory> circuitBreakerCustomizer() {
         return (factory) -> factory.configureDefault(id -> {

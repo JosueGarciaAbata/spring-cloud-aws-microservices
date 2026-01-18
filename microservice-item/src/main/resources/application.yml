@@ -15,3 +15,11 @@ resilience4j:
     instances:
       items:
         base-config: default
+  ratelimiter:
+    configs:
+      default:
+        timeout-duration:
+          seconds: 5
+    instances:
+      items:
+        base-config: default
