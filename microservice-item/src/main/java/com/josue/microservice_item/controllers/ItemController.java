@@ -5,6 +5,7 @@ import com.josue.microservice_item.services.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,10 +18,12 @@ import java.util.Optional;
 public class ItemController {
 
     private final ItemService itemService;
+    private final CircuitBreakerFactory circuitBreakerFactory;
     private final Logger logger = LoggerFactory.getLogger(ItemController.class);
 
-    public  ItemController(@Qualifier("itemFeignServiceImp") ItemService itemService) {
+    public  ItemController(@Qualifier("itemFeignServiceImp") ItemService itemService, CircuitBreakerFactory circuitBreakerFactory) {
         this.itemService = itemService;
+        this.circuitBreakerFactory = circuitBreakerFactory;
     }
 
     @GetMapping("/")
@@ -34,9 +37,12 @@ public class ItemController {
 
     @GetMapping("/by-product/{productId}")
     public ResponseEntity<Item> findById(@PathVariable Long productId) {
-        Optional<Item> item = itemService.findById(productId);
+        Optional<Item> item = circuitBreakerFactory.create("items").run(() -> itemService.findById(productId), e -> {
+            logger.info("CircuitBreakerFactory, somenthing went wrong in findById' = " + productId);
+            return Optional.empty();
+        });
         if (item.isEmpty()) {
-            ResponseEntity.notFound().build();
+            return ResponseEntity.notFound().build();
         }
 
         return ResponseEntity.ok(item.get());

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping(path = "/api/{version}/products", version = "v1")
@@ -29,7 +30,15 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> findById(@PathVariable Long id) {
+    public ResponseEntity<Product> findById(@PathVariable Long id) throws InterruptedException {
+
+        if (id.equals(10L)) {
+            throw new IllegalStateException("Intentional error");
+        }
+
+        if (id.equals(20L)) {
+            TimeUnit.MILLISECONDS.sleep(1L);
+        }
 
         Optional<Product> product = productService.findById(id);
 
