@@ -42,7 +42,7 @@ public class ProductController {
 
         Optional<Product> product = productService.findById(id);
 
-        return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build()); // Feign lanza excepciones para errores 4.x.x
 
     }
 }

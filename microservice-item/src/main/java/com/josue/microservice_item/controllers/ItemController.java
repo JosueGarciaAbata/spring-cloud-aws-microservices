@@ -49,18 +49,20 @@ public class ItemController {
         return ResponseEntity.ok(item.get());
     }
 
-    @CircuitBreaker(name = "items") // Solo toma en cuenta configuraiones del .yml
+    @CircuitBreaker(name = "items", fallbackMethod = "findByIdCbFallback") // Solo toma en cuenta configuraiones del .ymls
+    // Tambien por lo que entiendo, esta anotacion captura cualquier excepcion que se lanze en este metodo y lo manza al fallback
     @GetMapping("/by-product/cb/{productId}")
     public ResponseEntity<Item> findByIdCb(@PathVariable Long productId) {
-        Optional<Item> item = circuitBreakerFactory.create("items").run(() -> itemService.findById(productId), e -> {
-            logger.info("CircuitBreakerFactory, somenthing went wrong in findById' = " + productId);
-            return Optional.empty();
-        });
+        Optional<Item> item = itemService.findById(productId);
         if (item.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
         return ResponseEntity.ok(item.get());
+    }
+
+    public ResponseEntity<Item> findByIdCbFallback(Throwable throwable) {
+        return ResponseEntity.notFound().build();
     }
 
 }
