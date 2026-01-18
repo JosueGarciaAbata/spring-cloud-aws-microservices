@@ -2,6 +2,7 @@ package com.josue.microservice_product.controllers;
 
 import com.josue.microservice_product.entities.Product;
 import com.josue.microservice_product.services.ProductService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

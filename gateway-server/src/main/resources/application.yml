@@ -10,7 +10,11 @@ spring:
                 - Path=/api/v1/products/**
                 - Method=GET
               filters:
-                - CircuitBreaker=products
+                - name: CircuitBreaker
+                  args:
+                    name: products
+                    statusCodes: 500
+                    fallbackUri: forward:/api/v1/items/gatewayErrorFallback
                 - SampleCookie=Thisismymessage, system, adxx
 
             - id: microservice-product-v2

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.context.annotation.Primary;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,11 @@ public class ItemController {
     public  ItemController(@Qualifier("itemFeignServiceImp") ItemService itemService, CircuitBreakerFactory circuitBreakerFactory) {
         this.itemService = itemService;
         this.circuitBreakerFactory = circuitBreakerFactory;
+    }
+
+    @GetMapping("/gatewayErrorFallback")
+    public ResponseEntity<String> gatewayErrorFallback() {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
 
     @GetMapping("/")
