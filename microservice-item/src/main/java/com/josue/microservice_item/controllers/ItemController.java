@@ -7,7 +7,9 @@ import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +19,17 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
-@RestController()
+@RefreshScope
+@RestController
 @RequestMapping("/api/v1/items")
 public class ItemController {
 
     private final ItemService itemService;
     private final CircuitBreakerFactory circuitBreakerFactory;
     private final Logger logger = LoggerFactory.getLogger(ItemController.class);
+
+    @Value("${refreshScope}")
+    private String refreshScope;
 
     public  ItemController(@Qualifier("itemFeignServiceImp") ItemService itemService, CircuitBreakerFactory circuitBreakerFactory) {
         this.itemService = itemService;
@@ -38,6 +44,7 @@ public class ItemController {
     @GetMapping("/")
     public List<Item> findAll(@RequestParam("name") String nameParam, @RequestHeader("token-request") String tokenRequest) {
 
+        logger.info("Testing refreshScope: " + refreshScope);
         logger.info("ItemController, parametro 'name' = " + nameParam);
         logger.info("ItemController, parametro 'token' = " + tokenRequest);
 
