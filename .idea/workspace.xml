@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e22bf5b9-6351-4a63-995c-ce9367f1f5dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/controllers/ProductController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +154,7 @@
       <workItem from="1768675118422" duration="9488000" />
       <workItem from="1768744686047" duration="9556000" />
       <workItem from="1768758942628" duration="63000" />
-      <workItem from="1768759016632" duration="5688000" />
+      <workItem from="1768759016632" duration="6901000" />
     </task>
     <servers />
   </component>
