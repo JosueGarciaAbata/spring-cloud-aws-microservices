@@ -4,23 +4,23 @@ import com.josue.microservice_item.models.ProductDto;
 
 public class Item {
 
-    private ProductDto product;
+    private Long productId; // En un proyecto ya real, en realidad solo se tiene el productId y en base a eso se trabja.
     private int quantity;
 
     public Item() {
     }
 
-    public Item(ProductDto product, int quantity) {
-        this.product = product;
+    public  Item(Long productId, int quantity) {
+        this.productId = productId;
         this.quantity = quantity;
     }
 
-    public ProductDto getProduct() {
-        return product;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setProduct(ProductDto product) {
-        this.product = product;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
     public int getQuantity() {
@@ -30,9 +30,4 @@ public class Item {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    public Double getTotalPrice() {
-        return product.getPrice() * quantity;
-    }
-
 }

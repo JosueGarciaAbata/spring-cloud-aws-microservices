@@ -1,6 +1,7 @@
 package com.josue.microservice_item.controllers;
 
 import com.josue.microservice_item.entities.Item;
+import com.josue.microservice_item.models.ProductDto;
 import com.josue.microservice_item.services.ItemService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
@@ -31,7 +32,7 @@ public class ItemController {
     @Value("${refreshScope}")
     private String refreshScope;
 
-    public  ItemController(@Qualifier("itemFeignServiceImp") ItemService itemService, CircuitBreakerFactory circuitBreakerFactory) {
+    public  ItemController(@Qualifier("itemWebClientServiceImp") ItemService itemService, CircuitBreakerFactory circuitBreakerFactory) {
         this.itemService = itemService;
         this.circuitBreakerFactory = circuitBreakerFactory;
     }
@@ -53,27 +54,22 @@ public class ItemController {
 
     @GetMapping("/by-product/{productId}")
     public ResponseEntity<Item> findById(@PathVariable Long productId) {
-        Optional<Item> item = circuitBreakerFactory.create("items").run(() -> itemService.findById(productId), e -> {
+        Item item = circuitBreakerFactory.create("items").run(() -> itemService.findByProductId(productId), e -> {
             logger.info("CircuitBreakerFactory, somenthing went wrong in findById' = " + productId);
-            return Optional.empty();
+            return null;
         });
-        if (item.isEmpty()) {
+        if (item == null) {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok(item.get());
+        return ResponseEntity.ok(item);
     }
 
     @CircuitBreaker(name = "items", fallbackMethod = "findByIdCbFallback") // Solo toma en cuenta configuraiones del .ymls
     // Tambien por lo que entiendo, esta anotacion captura cualquier excepcion que se lanze en este metodo y lo manza al fallback
     @GetMapping("/by-product/cb/{productId}")
     public ResponseEntity<Item> findByIdCb(@PathVariable Long productId) {
-        Optional<Item> item = itemService.findById(productId);
-        if (item.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        return ResponseEntity.ok(item.get());
+        return ResponseEntity.ok(itemService.findByProductId(productId));
     }
 
     public ResponseEntity<Item> findByIdCbFallback(Throwable throwable) {
@@ -88,16 +84,27 @@ public class ItemController {
     @GetMapping("/by-product/tl/{productId}")
     public CompletableFuture<ResponseEntity<Item>> findByIdTl(@PathVariable Long productId) {
         return CompletableFuture.supplyAsync(() -> {
-            Optional<Item> item = itemService.findById(productId);
-            if (item.isEmpty()) {
-                return ResponseEntity.notFound().build();
-            }
-
-            return ResponseEntity.ok(item.get());
+            return ResponseEntity.ok(itemService.findByProductId(productId));
         });
     }
 
     public ResponseEntity<Item> findByIdTl(Throwable throwable) {
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<ProductDto> saveProduct(@RequestBody ProductDto productDto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.itemService.saveProduct(productDto));
+    }
+
+    @PutMapping("/{productId}")
+    public ResponseEntity<ProductDto> updateProduct(@PathVariable Long productId, @RequestBody ProductDto productDto) {
+        return ResponseEntity.ok(this.itemService.updateProduct(productId, productDto));
+    }
+
+    @DeleteMapping("/{productId}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable Long productId) {
+        this.itemService.deleteByProductId(productId);
+        return ResponseEntity.noContent().build();
     }
 }

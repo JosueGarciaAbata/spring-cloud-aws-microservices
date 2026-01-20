@@ -9,9 +9,9 @@ import java.util.Optional;
 public interface ItemService {
 
     List<Item> findAll();
-    Optional<Item> findById(Long id);
-    ProductDto save(ProductDto product);
-    ProductDto update(Long id, ProductDto product);
-    void deleteById(Long id);
+    Item findByProductId(Long id);
+    ProductDto saveProduct(ProductDto product);
+    ProductDto updateProduct(Long productID, ProductDto product);
+    void deleteByProductId(Long id);
 
 }
