@@ -21,7 +21,7 @@ public class ItemFeignServiceImp implements ItemService {
 
     @Override
     public List<Item> findAll() {
-        return productFeignClient.findAll().stream().map(product -> {
+        return this.productFeignClient.findAll().stream().map(product -> {
             Random ran = new Random();
             return new Item(product.getId(), ran.nextInt(11));
         }).toList();
@@ -29,23 +29,23 @@ public class ItemFeignServiceImp implements ItemService {
 
     @Override
     public Item findByProductId(Long id) {
-        ProductDto product = productFeignClient.findById(id); // Si no existe el producto, Spring lanza una excepcion FeignClient.
+        ProductDto product = this.productFeignClient.findById(id); // Si no existe el producto, Spring lanza una excepcion FeignClient.
         Random ran = new Random();
         return new Item(product.getId(), ran.nextInt(11));
     }
 
     @Override
     public ProductDto saveProduct(ProductDto product) {
-        return null;
+        return this.productFeignClient.save(product);
     }
 
     @Override
     public ProductDto updateProduct(Long id, ProductDto product) {
-        return null;
+        return this.productFeignClient.update(id, product);
     }
 
     @Override
     public void deleteByProductId(Long id) {
-
+        this.productFeignClient.deleteById(id);
     }
 }

@@ -32,7 +32,7 @@ public class ItemController {
     @Value("${refreshScope}")
     private String refreshScope;
 
-    public  ItemController(@Qualifier("itemWebClientServiceImp") ItemService itemService, CircuitBreakerFactory circuitBreakerFactory) {
+    public  ItemController(@Qualifier("itemFeignServiceImp") ItemService itemService, CircuitBreakerFactory circuitBreakerFactory) {
         this.itemService = itemService;
         this.circuitBreakerFactory = circuitBreakerFactory;
     }

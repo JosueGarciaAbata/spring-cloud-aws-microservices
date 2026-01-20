@@ -85,7 +85,6 @@ public class ItemWebClientServiceImp implements ItemService {
     // Motivos de aprendizaje, se puede usar directamente el endpoint de save product de 'ProductController'
     @Override
     public void deleteByProductId(Long productId) {
-
         this.builder.build()
                 .delete()
                 .uri(url + "/{id}", productId)
