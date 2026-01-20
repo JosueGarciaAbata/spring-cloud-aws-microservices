@@ -61,4 +61,19 @@ public class ItemWebClientServiceImp implements ItemService {
             throw new RuntimeException("Product not found: " + e.getMessage());
         }
     }
+
+    @Override
+    public ProductDto save(ProductDto product) {
+        return null;
+    }
+
+    @Override
+    public ProductDto update(Long id, ProductDto product) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
 }

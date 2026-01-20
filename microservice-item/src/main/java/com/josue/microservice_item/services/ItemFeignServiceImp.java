@@ -33,4 +33,19 @@ public class ItemFeignServiceImp implements ItemService {
         Random ran = new Random();
         return  Optional.of(new Item(product, ran.nextInt(11)));
     }
+
+    @Override
+    public ProductDto save(ProductDto product) {
+        return null;
+    }
+
+    @Override
+    public ProductDto update(Long id, ProductDto product) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
 }
