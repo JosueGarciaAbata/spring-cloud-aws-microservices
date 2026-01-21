@@ -19,20 +19,18 @@ public class UserServiceImpl implements UserService {
     private final String adminRole = "ROLE_ADMIN";
 
     private final UserRepository repository;
-    private final UserService service;
     private final PasswordEncoder passwordEncoder;
     private final RoleRepository  roleRepository;
 
     public UserServiceImpl(UserRepository repository,
-                           UserService service,
                            PasswordEncoder passwordEncoder,
                            RoleRepository roleRepository) {
         this.repository = repository;
-        this.service = service;
         this.passwordEncoder = passwordEncoder;
         this.roleRepository = roleRepository;
     }
 
+    @Transactional
     @Override
     public User save(User user) {
         if (existByUsername(user.getUsername())) {
@@ -42,8 +40,8 @@ public class UserServiceImpl implements UserService {
         List<Role> roles = new ArrayList<>();
         Optional<Role> optionalRoles = roleRepository.findByName(defaultRole);
         optionalRoles.ifPresent(roles::add);
-        if (user.isAdmin()) {
-            Optional<Role> optionalAdminRole = roleRepository.findByName(defaultRole);
+        if (user.getIsAdmin() != null && user.getIsAdmin()) {
+            Optional<Role> optionalAdminRole = roleRepository.findByName(adminRole);
             optionalAdminRole.ifPresent(roles::add);
         }
         user.setRoles(roles);
@@ -57,7 +55,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User update(Long id, User user) {
 
-        User userFound = service.findById(id);
+        User userFound = this.findById(id);
         if (existsByEmail(user.getEmail()) || existByUsername(user.getUsername())) {
             throw new RuntimeException("Email or username already exists");
         }
@@ -69,9 +67,9 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void updatePassword(Long id, String newPassword) {
-        User user = service.findById(id);
+        User user = this.findById(id);
         user.setPassword(passwordEncoder.encode(newPassword));
-        service.save(user);
+        this.save(user);
     }
 
     @Transactional(readOnly = true)
@@ -89,7 +87,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void deleteById(Long id) {
-        service.findById(id);
+        this.findById(id);
         repository.deleteById(id);
     }
 
@@ -99,11 +97,13 @@ public class UserServiceImpl implements UserService {
         return repository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found."));
     }
 
+    @Transactional(readOnly = true)
     @Override
     public boolean existByUsername(String username) {
         return repository.existsByUsername(username);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public boolean existsByEmail(String email) {
         return repository.existsByEmail(email);

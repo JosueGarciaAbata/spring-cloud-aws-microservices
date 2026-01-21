@@ -38,6 +38,11 @@ spring:
                 - AddResponseHeader=token-response, resp2
                 - AddRequestParameter=name, Josue
 
+            - id: microservice-user
+              uri: lb://microservice-user
+              predicates:
+                - Path=/api/v1/users/**
+
 resilience4j:
   circuitbreaker:
     configs:

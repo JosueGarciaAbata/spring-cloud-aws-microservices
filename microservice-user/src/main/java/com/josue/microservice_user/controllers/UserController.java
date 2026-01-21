@@ -17,9 +17,14 @@ public class UserController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<User> create(@RequestBody User user) {
         return ResponseEntity.ok(service.save(user));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user) {
+        return ResponseEntity.ok(service.update(id, user));
     }
 
     @GetMapping
@@ -27,12 +32,12 @@ public class UserController {
         return ResponseEntity.ok(service.findAll());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/by-id/{id}")
     public ResponseEntity<User> get(@PathVariable Long id) {
         return ResponseEntity.ok(service.findById(id));
     }
 
-    @GetMapping("/{username}")
+    @GetMapping("/by-username/{username}")
     public ResponseEntity<User> getByUsername(@PathVariable String username) {
         return ResponseEntity.ok(service.findByUsername(username));
     }

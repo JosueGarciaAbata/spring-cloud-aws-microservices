@@ -1,0 +1,22 @@
+info:
+  name: update user
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: http://localhost:8092/api/v1/users/1
+  body:
+    type: json
+    data: |-
+      {
+        "username": "new_username",
+        "email": "new_email"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

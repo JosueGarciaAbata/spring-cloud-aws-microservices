@@ -1,0 +1,23 @@
+info:
+  name: create user
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8092/api/v1/users/
+  body:
+    type: json
+    data: |-
+      {
+        "username": "admin_user",
+        "password": "123456789",
+        "email": "user_admin@hotmail.com",
+        "isAdmin": true
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

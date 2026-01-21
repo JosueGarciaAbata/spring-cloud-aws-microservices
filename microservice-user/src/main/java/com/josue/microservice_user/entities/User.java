@@ -1,6 +1,8 @@
 package com.josue.microservice_user.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,15 +29,16 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    private boolean enabled;
+    private Boolean enabled;
 
     @Column(nullable = false, unique = true)
     private String email;
 
     // Por simplicidad en la misma entidad, lo correcto un dto.
     @Transient
-    private boolean isAdmin;
+    private Boolean isAdmin;
 
+    @JsonManagedReference
     @JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -48,7 +51,9 @@ public class User {
 
     @PrePersist
     public void prePersist() {
-        this.enabled = true;
+        if (enabled == null) {
+            enabled = true;
+        }
     }
 
 }
