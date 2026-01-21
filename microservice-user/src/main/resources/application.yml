@@ -1,7 +1,15 @@
 spring:
   application:
     name: microservice-user
-
+  datasource:
+    url: jdbc:mysql://localhost:3306/springboot_cloud_aws
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
 server:
   port: 8081
 
