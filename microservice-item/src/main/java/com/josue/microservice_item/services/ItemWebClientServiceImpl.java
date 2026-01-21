@@ -3,24 +3,21 @@ package com.josue.microservice_item.services;
 import com.josue.microservice_item.entities.Item;
 import com.josue.microservice_item.models.ProductDto;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.WebClientResponseException;
-import reactor.core.publisher.Mono;
 
 import java.util.*;
 
 @Service
-public class ItemWebClientServiceImp implements ItemService {
+public class ItemWebClientServiceImpl implements ItemService {
 
     @Value("${microservice.products.url}")
     private String url;
 
     private final WebClient.Builder builder;
 
-    public  ItemWebClientServiceImp(WebClient.Builder builder) {
+    public ItemWebClientServiceImpl(WebClient.Builder builder) {
         this.builder = builder;
     }
 

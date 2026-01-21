@@ -3,19 +3,17 @@ package com.josue.microservice_item.services;
 import com.josue.microservice_item.clients.ProductFeignClient;
 import com.josue.microservice_item.entities.Item;
 import com.josue.microservice_item.models.ProductDto;
-import feign.FeignException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 
 @Service
-public class ItemFeignServiceImp implements ItemService {
+public class ItemFeignServiceImpl implements ItemService {
 
     private final ProductFeignClient productFeignClient;
 
-    public ItemFeignServiceImp(ProductFeignClient productFeignClient) {
+    public ItemFeignServiceImpl(ProductFeignClient productFeignClient) {
         this.productFeignClient = productFeignClient;
     }
 
