@@ -8,7 +8,7 @@ spring:
               uri: lb://microservice-product
               predicates:
                 - Path=/api/v1/products/**
-                - Method=GET
+                - Method=GET,POST,PUT,DELETE
               filters:
                 - name: CircuitBreaker
                   args:

@@ -41,9 +41,25 @@ public class ProductController {
             TimeUnit.SECONDS.sleep(6L); // Ajustar si es para probar o un slow call o un timeout.
         }
 
-        Optional<Product> product = productService.findById(id);
-
-        return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build()); // Feign lanza excepciones para errores 4.x.x
-
+        Product product = productService.findById(id);
+        return ResponseEntity.ok(product);
     }
+
+    @PostMapping("/")
+    public ResponseEntity<Product> save(@RequestBody Product product) {
+        Product saved = productService.save(product);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> update(@PathVariable Long id, @RequestBody Product product) {
+        return  ResponseEntity.ok(productService.update(id, product));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        productService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

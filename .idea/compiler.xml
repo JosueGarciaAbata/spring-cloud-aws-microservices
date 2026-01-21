@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="microservice-product" />
         <module name="gateway-server" />
-        <module name="config-server" />
         <module name="microservice-item" />
+        <module name="microservice-user" />
         <module name="eureka-server" />
         <module name="gateway" />
       </profile>
@@ -26,6 +27,7 @@
       <module name="gateway-server" options="-parameters" />
       <module name="microservice-item" options="-parameters" />
       <module name="microservice-product" options="-parameters" />
+      <module name="microservice-user" options="-parameters" />
     </option>
   </component>
 </project>

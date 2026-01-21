@@ -21,8 +21,10 @@ public class Product {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Transient
-    private int port;
+    @PrePersist
+    public void prePersist() {
+        createdAt = LocalDateTime.now();
+    }
 
     public Long getId() {
         return id;
@@ -54,13 +56,5 @@ public class Product {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
     }
 }
