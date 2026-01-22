@@ -19,6 +19,7 @@ public class SecurityConfig {
                         .pathMatchers("/api/v1/items/**", "/api/v1/users/**").hasAnyAuthority("SCOPE_write", "SCOPE_read")
                         .anyExchange().authenticated()
                 ).cors(ServerHttpSecurity.CorsSpec::disable)
+                .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())
                 .oauth2Login(Customizer.withDefaults())
                 .oauth2Client(Customizer.withDefaults())
