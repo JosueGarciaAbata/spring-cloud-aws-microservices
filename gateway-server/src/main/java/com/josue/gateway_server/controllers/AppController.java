@@ -25,7 +25,4 @@ public class AppController {
         return Collections.singletonMap("logout", "Ok");
     }
 
-
-
-
 }

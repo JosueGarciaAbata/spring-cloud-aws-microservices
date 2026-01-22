@@ -1,0 +1,27 @@
+info:
+  name: (3) exchange code
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://127.0.0.1:8093/oauth2/token
+  body:
+    type: form-urlencoded
+    data:
+      - name: code
+        value: RMw_HXrx2Xh9B9aA6zT4mIoSZvS53Ne2IxQylXH5MiSg7VqqkkXE5EiPErdmGvjp2M6hjEIQxNlGtHVmWkRjG3X84T88WHFNokf7sYlC5emlY8rOTrm01hsXmxxjFnHk
+      - name: grant_type
+        value: authorization_code
+      - name: redirect_uri
+        value: http://127.0.0.1:8080/authorized
+  auth:
+    type: basic
+    username: oidc-client
+    password: secret
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

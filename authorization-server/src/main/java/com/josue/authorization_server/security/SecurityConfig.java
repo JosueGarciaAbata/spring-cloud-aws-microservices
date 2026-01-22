@@ -18,6 +18,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -44,6 +45,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .formLogin(Customizer.withDefaults())
+                .csrf(AbstractHttpConfigurer::disable)
                 .oauth2AuthorizationServer((authorizationServer) -> authorizationServer
                         .oidc(Customizer.withDefaults())
                 );
@@ -61,7 +63,7 @@ public class SecurityConfig {
         UserDetails adminUser = User.builder()
                 .username("admin")
                 .password("{noop}password")
-                .roles("ADMIN")
+                .roles("USER", "ADMIN")
                 .build();
 
         return new InMemoryUserDetailsManager(userDetails, adminUser);
@@ -70,24 +72,27 @@ public class SecurityConfig {
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient oidcClient = RegisteredClient.withId(UUID.randomUUID().toString())
-                .clientId("gateway-client")
+                .clientId("oidc-client")
                 .clientSecret("{noop}secret")
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-                // Servicios a protegerse.
-                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/gateway-client")
-                .redirectUri("http://127.0.0.1:8080/authorized")
-                .postLogoutRedirectUri("http://127.0.0.1:8080/logout")
+                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/oidc-client")
+                .postLogoutRedirectUri("http://127.0.0.1:8080/")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
+                .scope("write")
+                .scope("read")
                 .clientSettings(ClientSettings.builder().requireAuthorizationConsent(false).build())
                 .build();
 
         return new InMemoryRegisteredClientRepository(oidcClient);
     }
 
-    // Firma un jwt (internamente con las claves privadas)
+    // JWK (Json Web Key): Clave criptografca expresada en json.
+    // RASKey: encapsula metadatos criptograficos especificso de RSA.
+    // JWKSet: contenedor de claves.
+    // JWKSource: exponer las claves a quien las necesite.
     @Bean
     public JWKSource<SecurityContext> jwkSource() {
         KeyPair keyPair = generateRsaKey();
@@ -114,7 +119,6 @@ public class SecurityConfig {
         return keyPair;
     }
 
-    // Valida el jwt (con las claves publicas)
     @Bean
     public JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource) {
         return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource);
