@@ -4,6 +4,11 @@ spring:
       server:
         webflux:
           routes:
+            - id: authorization-server
+              uri: lb://authorization-server
+              predicates:
+                - Path=/api/security/**
+
             - id: microservice-product-v1
               uri: lb://microservice-product
               predicates:
