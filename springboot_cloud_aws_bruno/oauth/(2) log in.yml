@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: http://127.0.0.1:8093/oauth2/authorization/oidc-client
+  url: http://127.0.0.1:8093/login
   body:
     type: form-urlencoded
     data:

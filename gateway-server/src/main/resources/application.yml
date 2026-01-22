@@ -9,10 +9,10 @@ spring:
           oidc-client:
             provider: "spring"
             client-id: "oidc-client"
-            client-secret: "{noop}secret"
+            client-secret: "secret"
             client-authentication-method: "client_secret_basic"
             authorization-grant-type: "authorization_code"
-            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/oidc-client"
+            redirect-uri: "http://127.0.0.1:8080/authorized"
             scope:
               - "openid"
               - "profile"
