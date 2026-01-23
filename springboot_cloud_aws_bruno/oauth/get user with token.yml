@@ -5,7 +5,10 @@ info:
 
 http:
   method: GET
-  url: http://localhost:8080/api/v1/users/
+  url: http://localhost:8080/api/v1/users
+  auth:
+    type: bearer
+    token: eyJraWQiOiJkM2UwYzk1My1kOGE5LTRiMzEtODU2Ny1lMzhkNTM3Y2I3ZjYiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiYXVkIjoib2lkYy1jbGllbnQiLCJuYmYiOjE3NjkxMjg2OTksInNjb3BlIjpbIm9wZW5pZCIsInByb2ZpbGUiXSwicm9sZXMiOlsiUk9MRV9VU0VSIiwiRkFDVE9SX1BBU1NXT1JEIl0sImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA5MyIsImV4cCI6MTc2OTEyODk5OSwiaWF0IjoxNzY5MTI4Njk5LCJqdGkiOiI1YWI2YWNlZC04MjY1LTRhYjMtOThhMS1kNzgyZjgzN2IxMjAifQ.o_aJsgG7bMK3nXfpn4FWgKXUDI1frbtwqIpy0hdP3d-nwgimdbcgAh-0PcAKED-fJnjhgw2MZIjcZsBJxvj9gS-sWnqe-GcKbJ4cw0-PYxuMnmaUSaqEFHlLcWCMOUkoc_FMuoX73x81Z-_HaVZLBeKt06EZ9iaTsrbk0n7F8eJDeIAeQjWp3k3mCQDzTFyvtTOSdHj2rABFOo0JFqZT4NjHp2q1p3C2Z34Yhx83c824_Gj4knqU9Tex1YnCK6-wnb-LkgJWNkbmz33Yz_96glYSfTsk_Hp1W0jiM4nhSGOIHoHwADPoVWhiDwff8R6vqc2BnGoAcYh2LP184ys-iA
 
 settings:
   encodeUrl: true
