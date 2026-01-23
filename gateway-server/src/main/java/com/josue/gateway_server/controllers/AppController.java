@@ -16,6 +16,12 @@ import java.util.Map;
 public class AppController {
 
     @GetMapping("/authorized")
+    public Map<String, String> authorized(@RequestParam("code") String code) {
+        return Map.of("code", code);
+    }
+
+
+    @GetMapping("/authorized/v1")
     public Map<String, String> token(@RegisteredOAuth2AuthorizedClient("oidc-client")
                                           OAuth2AuthorizedClient authorizedClient) {
         String accessToken = authorizedClient

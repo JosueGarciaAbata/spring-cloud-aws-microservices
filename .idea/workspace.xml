@@ -5,8 +5,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e22bf5b9-6351-4a63-995c-ce9367f1f5dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/security/AuthorizationServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/test/java/com/josue/authorization_server/AuthorizationServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/test/java/com/josue/config_server/ConfigServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/test/java/com/josue/eureka_server/EurekaServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/controllers/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/controllers/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/filters/SampleGlobalFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/filters/factory/SampleCookieGatewayFilterFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/test/java/com/josue/gateway_server/GatewayServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/MicroserviceItemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/MicroserviceItemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/clients/ProductFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/clients/ProductFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/configs/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/configs/WebClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/configs/WebClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/entities/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/entities/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/models/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/models/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/services/ItemFeignServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/services/ItemFeignServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/services/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/services/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/java/com/josue/microservice_item/services/ItemWebClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/services/ItemWebClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/resources/META-INF/additional-spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-item/src/test/java/com/josue/microservice_item/MicroserviceItemApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/MicroserviceProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/MicroserviceProductApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/entities/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/java/com/josue/microservice_product/services/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/services/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-product/src/test/java/com/josue/microservice_product/MicroserviceProductApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/java/com/josue/microservice_user/MicroserviceUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/MicroserviceUserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/java/com/josue/microservice_user/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/java/com/josue/microservice_user/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/java/com/josue/microservice_user/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/java/com/josue/microservice_user/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/repositories/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/java/com/josue/microservice_user/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/java/com/josue/microservice_user/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/java/com/josue/microservice_user/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-user/src/test/java/com/josue/microservice_user/MicroserviceUserApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/oauth/(1) get login route.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/oauth/(3) exchange code.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/oauth/(3) exchange code.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +149,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/Josue/IdeaProjects/springboot-microservices/gateway-server&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/Josue/IdeaProjects/springboot-microservices/microservice-users&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -116,7 +186,7 @@
               <entry key="ConfigServerApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
               <entry key="GatewayServerApplication" value="STOPPED" />
-              <entry key="MicroserviceItemApplication" value="STOPPED" />
+              <entry key="MicroserviceItemApplication" value="FAILED" />
               <entry key="MicroserviceProductApplication" value="STOPPED" />
               <entry key="MicroserviceUserApplication" value="STOPPED" />
             </map>
@@ -124,8 +194,9 @@
         </entry>
       </map>
     </option>
+    <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+  <component name="RunManager" selected="Spring Boot.MicroserviceUserApplication">
     <configuration name="AuthorizationServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="authorization-server" />
@@ -173,14 +244,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MicroserviceUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="MicroserviceUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="microservice-user" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.josue.microservice_user.MicroserviceUserApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.MicroserviceUserApplication" />
+      <item itemvalue="Spring Boot.AuthorizationServerApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.GatewayServerApplication" />
+      <item itemvalue="Spring Boot.MicroserviceItemApplication" />
+      <item itemvalue="Spring Boot.MicroserviceProductApplication" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -217,7 +296,8 @@
       <workItem from="1769091231496" duration="3104000" />
       <workItem from="1769112378638" duration="4353000" />
       <workItem from="1769117122605" duration="1845000" />
-      <workItem from="1769178785260" duration="634000" />
+      <workItem from="1769178785260" duration="3490000" />
+      <workItem from="1769182290943" duration="6135000" />
     </task>
     <servers />
   </component>

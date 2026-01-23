@@ -23,7 +23,7 @@ spring:
   cloud:
     gateway:
       server:
-        webflux:
+        webmvc:
           routes:
             - id: authorization-server
               uri: lb://authorization-server
@@ -41,7 +41,6 @@ spring:
                     name: products
                     statusCodes: 500
                     fallbackUri: forward:/api/v1/items/gatewayErrorFallback
-                - SampleCookie=Thisismymessage, system, adxx
 
             - id: microservice-product-v2
               uri: lb://microservice-product
@@ -49,20 +48,11 @@ spring:
                 - Path=/api/v2/products/**
               filters:
                 - CircuitBreaker=products
-                - name: SampleCookie
-                  args:
-                    message: Hello! This is my message.
-                    name: system
-                    value: adxx
 
             - id: microservice-item
               uri: lb://microservice-item
               predicates:
                 - Path=/api/v1/items/**
-              filters:
-                - AddRequestHeader=token-request, reqsw123
-                - AddResponseHeader=token-response, resp2
-                - AddRequestParameter=name, Josue
 
             - id: microservice-user
               uri: lb://microservice-user
