@@ -16,7 +16,8 @@ public class SecurityConfig {
         return http.authorizeExchange(authz -> authz
                         .pathMatchers("/authorized", "/logout").permitAll()
                         .pathMatchers("/api/v1/products/**").permitAll()
-                        .pathMatchers("/api/v1/items/**", "/api/v1/users/**").hasAnyAuthority("SCOPE_write", "SCOPE_read")
+                        .pathMatchers("/api/v1/items/**", "/api/v1/users/**")
+                                .hasAnyAuthority("SCOPE_write", "SCOPE_read")
                         .anyExchange().authenticated()
                 ).cors(ServerHttpSecurity.CorsSpec::disable)
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
