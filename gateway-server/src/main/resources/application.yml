@@ -23,7 +23,7 @@ spring:
   cloud:
     gateway:
       server:
-        webmvc:
+        webflux:
           routes:
             - id: authorization-server
               uri: lb://authorization-server
@@ -31,7 +31,7 @@ spring:
                 - Path=/api/security/**
 
             - id: microservice-product-v1
-              uri: lb://microservice-product
+              uri: lb://microservice-products
               predicates:
                 - Path=/api/v1/products/**
                 - Method=GET,POST,PUT,DELETE
@@ -43,22 +43,21 @@ spring:
                     fallbackUri: forward:/api/v1/items/gatewayErrorFallback
 
             - id: microservice-product-v2
-              uri: lb://microservice-product
+              uri: lb://microservice-products
               predicates:
                 - Path=/api/v2/products/**
               filters:
                 - CircuitBreaker=products
 
             - id: microservice-item
-              uri: lb://microservice-item
+              uri: lb://microservice-items
               predicates:
                 - Path=/api/v1/items/**
 
             - id: microservice-user
-              uri: lb://microservice-user
+              uri: lb://microservice-users
               predicates:
                 - Path=/api/v1/users/**
-
 resilience4j:
   circuitbreaker:
     configs:
@@ -87,3 +86,9 @@ resilience4j:
     instances:
       products:
         base-config: default
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

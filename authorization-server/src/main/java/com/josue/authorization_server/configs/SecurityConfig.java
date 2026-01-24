@@ -1,4 +1,4 @@
-package com.josue.authorization_server.security;
+package com.josue.authorization_server.configs;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -48,7 +48,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class AuthorizationServerConfig {
+public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -95,9 +95,9 @@ public class AuthorizationServerConfig {
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/oidc-client")
-                .redirectUri("http://127.0.0.1:8080/authorized")
-                .postLogoutRedirectUri("http://127.0.0.1:8080/")
+                .redirectUri("http://127.0.0.1:8888/login/oauth2/code/oidc-client")
+                .redirectUri("http://127.0.0.1:8888/authorized")
+                .postLogoutRedirectUri("http://127.0.0.1:8888/")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
                 .tokenSettings(TokenSettings.builder().accessTokenTimeToLive(Duration.ofHours(1L)).refreshTokenTimeToLive(Duration.ofHours(2L)).build())

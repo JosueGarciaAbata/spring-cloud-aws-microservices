@@ -1,6 +1,8 @@
 package com.josue.authorization_server.services;
 
 import com.josue.authorization_server.dtos.UserDto;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,6 +21,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserDetailServiceImp implements UserDetailsService {
+
+    private final Logger logger =  LoggerFactory.getLogger(UserDetailServiceImp.class);
 
     @Autowired
     private WebClient.Builder webClientBuilder;
