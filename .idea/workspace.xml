@@ -6,6 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="e22bf5b9-6351-4a63-995c-ce9367f1f5dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/services/UserDetailServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/services/UserDetailServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-items/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-items/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-products/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-products/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,45 +67,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.microservice-item [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AuthorizationServerApplication.executor": "Run",
-    "Spring Boot.ConfigServerApplication.executor": "Run",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.GatewayServerApplication.executor": "Run",
-    "Spring Boot.MicroserviceItemApplication.executor": "Run",
-    "Spring Boot.MicroserviceProductApplication.executor": "Run",
-    "Spring Boot.MicroserviceUserApplication.executor": "Run",
-    "Spring Boot.OauthClientApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/Josue/IdeaProjects/springboot-microservices/oauth-client",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.microservice-item [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthorizationServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MicroserviceItemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MicroserviceProductApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MicroserviceUserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OauthClientApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/Josue/IdeaProjects/springboot-microservices/oauth-client&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/microservice-item/src/main/java" />
@@ -179,13 +192,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.MicroserviceUserApplication" />
       <item itemvalue="Spring Boot.AuthorizationServerApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayServerApplication" />
       <item itemvalue="Spring Boot.MicroserviceItemApplication" />
       <item itemvalue="Spring Boot.MicroserviceProductApplication" />
+      <item itemvalue="Spring Boot.MicroserviceUserApplication" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -226,6 +239,9 @@
       <workItem from="1769178785260" duration="3490000" />
       <workItem from="1769182290943" duration="6135000" />
       <workItem from="1769195946000" duration="19255000" />
+      <workItem from="1769278975264" duration="1229000" />
+      <workItem from="1769350941673" duration="3159000" />
+      <workItem from="1769364231017" duration="5623000" />
     </task>
     <servers />
   </component>

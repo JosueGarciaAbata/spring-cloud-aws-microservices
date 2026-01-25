@@ -29,6 +29,9 @@ public class UserDetailServiceImp implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+        logger.info("Request loadUserByUsername {}", username);
+
         Map<String, String> params = new HashMap<>();
         params.put("username", username);
         try {
@@ -43,7 +46,7 @@ public class UserDetailServiceImp implements UserDetailsService {
 
             List<GrantedAuthority> grantedAuthorities = user.getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 
-            return new org.springframework.security.core.userdetails.User(
+            org.springframework.security.core.userdetails.User userToAuthenticate = new org.springframework.security.core.userdetails.User(
                     user.getUsername(),
                     user.getPassword(),
                     user.getEnabled(),
@@ -51,8 +54,12 @@ public class UserDetailServiceImp implements UserDetailsService {
                     true,
                     true,
                     grantedAuthorities);
+            logger.info("userToAuthenticate {}", userToAuthenticate);
+            return userToAuthenticate;
         } catch (WebClientException e) {
-            throw new UsernameNotFoundException("User is not register in the system: " + username);
+            String error = "User is not register in the system: " + username;
+            logger.error(error);
+            throw new UsernameNotFoundException(error);
         }
     }
 }

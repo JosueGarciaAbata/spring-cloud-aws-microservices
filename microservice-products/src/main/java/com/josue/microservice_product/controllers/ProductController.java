@@ -2,6 +2,8 @@ package com.josue.microservice_product.controllers;
 
 import com.josue.microservice_product.entities.Product;
 import com.josue.microservice_product.services.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping(path = "/api/{version}/products", version = "v1")
 public class ProductController {
 
+    private final Logger logger = LoggerFactory.getLogger(ProductController.class);
     private final ProductService productService;
 
     public ProductController(ProductService productService) {
@@ -22,6 +25,7 @@ public class ProductController {
 
     @GetMapping("/")
     public List<Product> findAll() {
+        logger.info("Request getting all products");
         return productService.findAll();
     }
 
@@ -47,17 +51,20 @@ public class ProductController {
 
     @PostMapping("/")
     public ResponseEntity<Product> save(@RequestBody Product product) {
+        logger.info("Request saving product {}", product);
         Product saved = productService.save(product);
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Product> update(@PathVariable Long id, @RequestBody Product product) {
+        logger.info("Request updating product {} with id {}", product, id);
         return  ResponseEntity.ok(productService.update(id, product));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        logger.info("Request deleting product {}", id);
         productService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
