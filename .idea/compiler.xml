@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
-        <module name="authorization-server" />
         <module name="microservice-product" />
         <module name="gateway-server" />
         <module name="microservice-item" />
@@ -18,6 +17,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authorization-server" target="21" />
       <module name="gateway" target="21" />
       <module name="oauth-client" target="21" />
     </bytecodeTargetLevel>

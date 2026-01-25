@@ -5,20 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e22bf5b9-6351-4a63-995c-ce9367f1f5dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/services/UserDetailServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/services/UserDetailServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/AuthorizationServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/configs/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/configs/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/dtos/RoleDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/dtos/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/josue/authorization_server/services/UserDetailServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-items/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-items/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-products/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/java/com/josue/microservice_product/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-products/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/java/com/josue/microservice_user/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/java/com/josue/gateway_server/controllers/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/users/get by id.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/users/get by id.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +136,8 @@
               <entry key="AuthorizationServerApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
               <entry key="GatewayServerApplication" value="STOPPED" />
+              <entry key="MicroserviceItemApplication" value="STOPPED" />
+              <entry key="MicroserviceProductApplication" value="STOPPED" />
               <entry key="MicroserviceUserApplication" value="STOPPED" />
             </map>
           </value>
@@ -241,7 +251,7 @@
       <workItem from="1769195946000" duration="19255000" />
       <workItem from="1769278975264" duration="1229000" />
       <workItem from="1769350941673" duration="3159000" />
-      <workItem from="1769364231017" duration="5623000" />
+      <workItem from="1769364231017" duration="11188000" />
     </task>
     <servers />
   </component>

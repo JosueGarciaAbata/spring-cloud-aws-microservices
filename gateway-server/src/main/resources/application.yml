@@ -1,29 +1,8 @@
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://127.0.0.1:8093
-      client:
-        registration:
-          oidc-client:
-            provider: "spring"
-            client-id: "oidc-client"
-            client-secret: "secret"
-            client-authentication-method: "client_secret_basic"
-            authorization-grant-type: "authorization_code"
-            redirect-uri: "http://127.0.0.1:8080/authorized"
-            scope:
-              - "openid"
-              - "profile"
-            client-name: "gateway-app"
-        provider:
-          spring:
-            issuer-uri: http://127.0.0.1:8093
   cloud:
     gateway:
       server:
-        webflux:
+        webmvc:
           routes:
             - id: authorization-server
               uri: lb://authorization-server
@@ -35,19 +14,11 @@ spring:
               predicates:
                 - Path=/api/v1/products/**
                 - Method=GET,POST,PUT,DELETE
-              filters:
-                - name: CircuitBreaker
-                  args:
-                    name: products
-                    statusCodes: 500
-                    fallbackUri: forward:/api/v1/items/gatewayErrorFallback
 
             - id: microservice-product-v2
               uri: lb://microservice-products
               predicates:
                 - Path=/api/v2/products/**
-              filters:
-                - CircuitBreaker=products
 
             - id: microservice-item
               uri: lb://microservice-items
