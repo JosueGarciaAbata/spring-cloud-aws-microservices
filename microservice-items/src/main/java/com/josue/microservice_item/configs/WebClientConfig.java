@@ -9,9 +9,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebClientConfig {
 
-    @Value("${microservice.products.url}")
-    private String url;
-
     @Bean
     public WebClient.Builder webClientBuilder() {
         return WebClient.builder();
@@ -19,6 +16,6 @@ public class WebClientConfig {
 
     @Bean
     public WebClient webClient(WebClient.Builder builder, ReactorLoadBalancerExchangeFilterFunction loadBalancer) {
-        return builder.baseUrl(url).filter(loadBalancer).build();
+        return builder.baseUrl("http://microservice-products").filter(loadBalancer).build();
     }
 }

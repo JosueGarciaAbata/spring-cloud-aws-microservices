@@ -23,7 +23,7 @@ public class ItemWebClientServiceImpl implements ItemService {
     public List<Item> findAll() {
         return this.webClient
                 .get()
-                .uri("/")
+                .uri("/api/v1/products/")
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToFlux(ProductDto.class)
@@ -40,7 +40,7 @@ public class ItemWebClientServiceImpl implements ItemService {
         // Esto es por aprendizaje, lo logico seria traer el item de la bd de este microservicio.
         return this.webClient
                 .get()
-                .uri("/{id}", productId)
+                .uri("/api/v1/products/{id}", productId)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(ProductDto.class)
@@ -53,7 +53,7 @@ public class ItemWebClientServiceImpl implements ItemService {
     public ProductDto saveProduct(ProductDto product) {
         return this.webClient
                 .post()
-                .uri("/")
+                .uri("/api/v1/products")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(product)
                 .retrieve()
@@ -67,7 +67,7 @@ public class ItemWebClientServiceImpl implements ItemService {
     public ProductDto updateProduct(Long productId, ProductDto product) {
         return this.webClient
                 .put()
-                .uri("/{id}", productId)
+                .uri("/api/v1/products/{id}", productId)
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(product)
                 .retrieve()
@@ -81,7 +81,7 @@ public class ItemWebClientServiceImpl implements ItemService {
     public void deleteByProductId(Long productId) {
         this.webClient
                 .delete()
-                .uri("/{id}", productId)
+                .uri("/api/v1/products/{id}", productId)
                 .retrieve()
                 .bodyToMono(Void.class)
                 .block();
