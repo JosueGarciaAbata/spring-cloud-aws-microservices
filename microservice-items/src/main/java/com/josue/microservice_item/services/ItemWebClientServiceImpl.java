@@ -12,21 +12,18 @@ import java.util.*;
 @Service
 public class ItemWebClientServiceImpl implements ItemService {
 
-    @Value("${microservice.products.url}")
-    private String url;
+    private final WebClient webClient;
 
-    private final WebClient.Builder builder;
-
-    public ItemWebClientServiceImpl(WebClient.Builder builder) {
-        this.builder = builder;
+    public ItemWebClientServiceImpl(WebClient webClient) {
+        this.webClient = webClient;
     }
 
     // Realmente la llamada seria en la bd de este microservicio.
     @Override
     public List<Item> findAll() {
-        return this.builder.build()
+        return this.webClient
                 .get()
-                .uri(url + "/")
+                .uri("/")
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToFlux(ProductDto.class)
@@ -41,9 +38,9 @@ public class ItemWebClientServiceImpl implements ItemService {
     @Override
     public Item findByProductId(Long productId) {
         // Esto es por aprendizaje, lo logico seria traer el item de la bd de este microservicio.
-        return this.builder.build()
+        return this.webClient
                 .get()
-                .uri(url + "/{id}", productId)
+                .uri("/{id}", productId)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(ProductDto.class)
@@ -54,9 +51,9 @@ public class ItemWebClientServiceImpl implements ItemService {
     // Motivos de aprendizaje, se puede usar directamente el endpoint de save product de 'ProductController'
     @Override
     public ProductDto saveProduct(ProductDto product) {
-        return this.builder.build()
+        return this.webClient
                 .post()
-                .uri(url + "/")
+                .uri("/")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(product)
                 .retrieve()
@@ -68,9 +65,9 @@ public class ItemWebClientServiceImpl implements ItemService {
     // Motivos de aprendizaje, se puede usar directamente el endpoint de save product de 'ProductController'.
     @Override
     public ProductDto updateProduct(Long productId, ProductDto product) {
-        return this.builder.build()
+        return this.webClient
                 .put()
-                .uri(url + "/{id}", productId)
+                .uri("/{id}", productId)
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(product)
                 .retrieve()
@@ -82,9 +79,9 @@ public class ItemWebClientServiceImpl implements ItemService {
     // Motivos de aprendizaje, se puede usar directamente el endpoint de save product de 'ProductController'
     @Override
     public void deleteByProductId(Long productId) {
-        this.builder.build()
+        this.webClient
                 .delete()
-                .uri(url + "/{id}", productId)
+                .uri("/{id}", productId)
                 .retrieve()
                 .bodyToMono(Void.class)
                 .block();
