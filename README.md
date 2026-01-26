@@ -1,7 +1,6 @@
 ## 📘 Project Description
 
-This project is designed to strengthen and consolidate core concepts of modern backend development using the Spring ecosystem.  
-Throughout the modules in this repository, different technologies and patterns are applied in order to build scalable, flexible, and production-ready microservices.
+This project is designed to strengthen and consolidate core concepts of modern backend development using the Spring ecosystem. Throughout the modules in this repository, different technologies and patterns are applied in order to build scalable, flexible, and production-ready microservices.
 
 ### 🚀 Concepts and Technologies Covered
 
