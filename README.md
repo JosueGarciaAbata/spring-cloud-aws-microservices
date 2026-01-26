@@ -16,7 +16,6 @@ Throughout the modules in this repository, different technologies and patterns a
 - **Resilience4j** – Implementing resilience patterns such as circuit breakers, retries, and rate limiting
 - **Spring Cloud Gateway** – API gateway and routing layer for microservices
 - **Spring Cloud Config Server** – Centralized configuration management across environments
-- **OAuth 2.1 and JWT** – Modern authentication and authorization flows
 - **Micrometer Tracing & Zipkin** – Distributed tracing and observability in microservices
 - **Docker** – Containerizing applications for consistent deployment
 - **Amazon AWS Deployment** – Deploying microservices to cloud infrastructure  
