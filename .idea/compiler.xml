@@ -7,18 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="config-server" />
         <module name="microservice-product" />
-        <module name="gateway-server" />
         <module name="microservice-item" />
-        <module name="microservice-user" />
         <module name="eureka-server" />
         <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authorization-server" target="21" />
+      <module name="config-server" target="21" />
       <module name="gateway" target="21" />
+      <module name="gateway-server" target="21" />
+      <module name="microservice-user" target="21" />
       <module name="oauth-client" target="21" />
     </bytecodeTargetLevel>
   </component>
