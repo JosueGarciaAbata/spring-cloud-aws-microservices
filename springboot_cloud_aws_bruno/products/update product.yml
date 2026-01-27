@@ -5,12 +5,12 @@ info:
 
 http:
   method: PUT
-  url: http://localhost:8080/api/v1/products/11
+  url: http://localhost:8080/api/v1/products/2
   body:
     type: json
     data: |-
       {
-        "name": "ddd",
+        "name": "docker compose -rr",
         "price": 20.90
       }
   auth: inherit

@@ -1,0 +1,21 @@
+services:
+  mysql-server:
+    image: mysql:8.4.8
+    container_name: spring-ms-mysql
+    volumes:
+      - ./mysql/init:/docker-entrypoint-initdb.d:Z
+    labels:
+      - spring=spring-microservices-on-aws
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=springboot_cloud_aws
+      - MYSQL_USER=spring
+      - MYSQL_PASSWORD=spring
+    ports:
+      - "3333:3306"
+    networks:
+      - spring-ms-net
+
+networks:
+  spring-ms-net:
+    driver: bridge

@@ -10,7 +10,7 @@ http:
     type: json
     data: |-
       {
-        "name": "new product",
+        "name": "new product - docker",
         "price": 100.0
       }
   auth: inherit

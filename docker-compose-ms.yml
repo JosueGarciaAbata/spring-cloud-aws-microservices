@@ -1,0 +1,162 @@
+version: "3.9"
+
+services:
+  mysql-server:
+    image: mysql:8.4.8
+    container_name: spring-ms-mysql
+    volumes:
+      - ./mysql/init:/docker-entrypoint-initdb.d:Z
+    labels:
+      - spring=spring-microservices-on-aws
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=springboot_cloud_aws
+      - MYSQL_USER=spring
+      - MYSQL_PASSWORD=spring
+    ports:
+      - "3333:3306"
+    networks:
+      - spring-ms-net
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  zipkin-server:
+    image: openzipkin/zipkin
+    container_name: spring-ms-zipkin-server
+    ports:
+      - "9411:9411"
+    networks:
+      - spring-ms-net
+
+  config-server:
+    image: spring-ms-config-serveri
+    build:
+      context: .
+      dockerfile: Dockerfile-config-server
+    container_name: spring-ms-config-server
+    labels:
+      project: spring-microservices-on-aws
+    env_file:
+      - ./config-server/.env
+    ports:
+      - "8888:8888"
+    networks:
+      - spring-ms-net
+    healthcheck:
+      test: [ "CMD", "wget", "-qO-", "http://localhost:8888/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  eureka-server:
+    image: spring-ms-eureka-serveri
+    build:
+      context: .
+      dockerfile: Dockerfile-eureka-server
+    container_name: spring-ms-eureka-server
+    labels:
+      project: spring-microservices-on-aws
+    ports:
+      - "8761:8761"
+    depends_on:
+      - config-server
+    networks:
+      - spring-ms-net
+    healthcheck:
+      test: [ "CMD", "wget", "-qO-", "http://localhost:8761/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gateway-server:
+    image: spring-ms-gateway-serveri
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile-gateway-server
+    container_name: spring-ms-gateway-server
+    env_file:
+      - ./gateway-server/.env
+    labels:
+      project: spring-microservices-on-aws
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-ms-net
+
+  microservice-items:
+    image: spring-ms-microservice-itemsi
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      mysql-server:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile-microservice-items
+    container_name: spring-ms-microservice-items
+    env_file:
+      - ./microservice-items/.env
+    labels:
+      project: spring-microservices-on-aws
+    ports:
+      - "8081:8081"
+    networks:
+      - spring-ms-net
+
+  microservice-products:
+    image: spring-ms-microservice-productsi
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      mysql-server:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile-microservice-products
+    container_name: spring-ms-microservice-products
+    env_file:
+      - ./microservice-products/.env
+    labels:
+      project: spring-microservices-on-aws
+    ports:
+      - "8082:8082"
+    networks:
+      - spring-ms-net
+
+  microservice-users:
+    image: spring-ms-microservice-usersi
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      mysql-server:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile-microservice-users
+    container_name: spring-ms-microservice-users
+    env_file:
+      - ./microservice-users/.env
+    labels:
+      project: spring-microservices-on-aws
+    ports:
+      - "8083:8083"
+    networks:
+      - spring-ms-net
+
+networks:
+  spring-ms-net:
+    driver: bridge

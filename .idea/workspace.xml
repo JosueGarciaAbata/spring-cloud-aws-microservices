@@ -6,7 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="e22bf5b9-6351-4a63-995c-ce9367f1f5dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-items/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-items/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-products/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/delete product.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/delete product.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/get product.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/get product.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/get products.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/get products.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/save product.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/save product.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/update product.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/products/update product.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/users/create user.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/users/create user.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +34,7 @@
         <option value="Interface" />
         <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -96,6 +111,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mysql/init" />
       <recent name="$PROJECT_DIR$/microservice-item/src/main/java" />
     </key>
   </component>
@@ -113,6 +129,7 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
+              <entry key="ConfigServerApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
               <entry key="GatewayServerApplication" value="STOPPED" />
               <entry key="MicroserviceItemApplication" value="STOPPED" />
@@ -127,6 +144,9 @@
   </component>
   <component name="RunManager" selected="Spring Boot.MicroserviceUserApplication">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/config-server/.env" />
+      </option>
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.josue.config_server.ConfigServerApplication" />
@@ -135,6 +155,9 @@
       </method>
     </configuration>
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/eureka-server/.env" />
+      </option>
       <module name="eureka-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.josue.eureka_server.EurekaServerApplication" />
       <method v="2">
@@ -144,6 +167,9 @@
     <configuration name="GatewayServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="gateway-server" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.josue.gateway_server.GatewayServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -223,7 +249,8 @@
       <workItem from="1769350941673" duration="3159000" />
       <workItem from="1769364231017" duration="11222000" />
       <workItem from="1769378663737" duration="796000" />
-      <workItem from="1769379530936" duration="13693000" />
+      <workItem from="1769379530936" duration="14967000" />
+      <workItem from="1769461057640" duration="11896000" />
     </task>
     <servers />
   </component>

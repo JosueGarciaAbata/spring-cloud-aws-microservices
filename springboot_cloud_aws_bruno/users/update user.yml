@@ -5,12 +5,12 @@ info:
 
 http:
   method: PUT
-  url: http://localhost:8092/api/v1/users/1
+  url: http://localhost:8080/api/v1/users/6
   body:
     type: json
     data: |-
       {
-        "username": "new_username",
+        "username": "new_usernamedddd",
         "email": "new_email"
       }
   auth: inherit
