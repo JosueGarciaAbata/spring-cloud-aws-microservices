@@ -1,0 +1,2 @@
+docker build -t your_repo:deseared_tag -f file_name .
+docker push your_repo:deseared_tag

@@ -5,11 +5,9 @@ import com.josue.microservice_item.models.ProductDto;
 import com.josue.microservice_item.services.ItemService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
-import io.micrometer.tracing.Tracer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
@@ -28,9 +26,6 @@ public class ItemController {
     private final CircuitBreakerFactory circuitBreakerFactory;
     private final Logger logger = LoggerFactory.getLogger(ItemController.class);
 
-    @Value("${refreshScope:thisIsByDefault}")
-    private String refreshScope;
-
     public  ItemController(@Qualifier("itemFeignServiceImpl") ItemService itemService, CircuitBreakerFactory circuitBreakerFactory) {
         this.itemService = itemService;
         this.circuitBreakerFactory = circuitBreakerFactory;
@@ -43,7 +38,6 @@ public class ItemController {
 
     @GetMapping("/")
     public List<Item> findAll() {
-        logger.info("Request refreshSCope {}", refreshScope);
         return itemService.findAll();
     }
 
