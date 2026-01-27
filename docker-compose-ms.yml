@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   eureka-server:
-    image: spring-ms-eureka-serveri
+    image: jozzab/spring-microservices-on-aws-eureka-server
     build:
       context: .
       dockerfile: Dockerfile-eureka-server
@@ -11,8 +11,6 @@ services:
       project: spring-microservices-on-aws
     ports:
       - "8761:8761"
-    depends_on:
-      - config-server
     networks:
       - spring-ms-net
     healthcheck:
@@ -22,13 +20,13 @@ services:
       retries: 5
 
   microservice-items:
-    image: spring-ms-microservice-itemsi
-    depends_on:
-      eureka-server:
-        condition: service_healthy
+    image: jozzab/spring-microservices-on-aws-microservice-items
     build:
       context: .
       dockerfile: Dockerfile-microservice-items
+    depends_on:
+      eureka-server:
+        condition: service_healthy
     container_name: spring-ms-microservice-items
     env_file:
       - ./microservice-items/.env
@@ -40,13 +38,13 @@ services:
       - spring-ms-net
 
   microservice-products:
-    image: spring-ms-microservice-productsi
-    depends_on:
-      eureka-server:
-        condition: service_healthy
+    image: jozzab/spring-microservices-on-aws-microservice-products
     build:
       context: .
       dockerfile: Dockerfile-microservice-products
+    depends_on:
+      eureka-server:
+        condition: service_healthy
     container_name: spring-ms-microservice-products
     env_file:
       - ./microservice-products/.env

@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e22bf5b9-6351-4a63-995c-ce9367f1f5dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-items/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-items/src/main/java/com/josue/microservice_item/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservice-products/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-products/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-ms.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-ms.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/items/get item.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/items/get item.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_cloud_aws_bruno/items/get items.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_cloud_aws_bruno/items/get items.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +238,7 @@
       <workItem from="1769364231017" duration="11222000" />
       <workItem from="1769378663737" duration="796000" />
       <workItem from="1769379530936" duration="14967000" />
-      <workItem from="1769461057640" duration="15066000" />
+      <workItem from="1769461057640" duration="15416000" />
     </task>
     <servers />
   </component>
