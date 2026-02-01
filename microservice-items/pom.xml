@@ -8,7 +8,7 @@
 		<version>4.0.1</version>
 	</parent>
 	<groupId>com.josue</groupId>
-	<artifactId>microservice-item</artifactId>
+	<artifactId>microservice-items</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>microservice-items</name>
 	<description>Microservice for operations crud for a item</description>

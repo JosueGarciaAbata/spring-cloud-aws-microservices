@@ -9,7 +9,7 @@
 
 	</parent>
 	<groupId>com.josue</groupId>
-	<artifactId>microservice-product</artifactId>
+	<artifactId>microservice-products</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>microservice-products</name>
 	<description>Microservice for operations crud for a product</description>
